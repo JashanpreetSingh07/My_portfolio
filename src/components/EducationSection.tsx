@@ -26,9 +26,30 @@ const education = [
 ];
 
 const certificates = [
-  { title: "Introduction to Internet of Things", org: "NPTEL", period: "Jan – Apr 2025" },
-  { title: "Programming in C, C++, Java and DSA", org: "NeoColab", period: "Jan 2024 – Aug 2025" },
-  { title: "Responsive Web Design", org: "FreeCodeCamp", period: "Aug – Oct 2023" },
+  {
+    title: "AI Powered NLP",
+    org: "AlgoTutor Academy",
+    period: "Jul – Aug 2025",
+    link: "https://drive.google.com/file/d/1IAoxKhtgVccvvOId1QU-yI2qZCZtl2wO/view?usp=sharing"
+  },
+  { 
+    title: "Introduction to Internet of Things", 
+    org: "NPTEL", 
+    period: "Jan – Apr 2025",
+    link: "https://drive.google.com/file/d/17BtQgiLTBh5YhnQCHnno7kovAn1HzQnM/view?usp=sharing"
+  },
+  { 
+    title: "Programming in C, C++, Java and DSA", 
+    org: "NeoColab", 
+    period: "Jan 2024 – Aug 2025",
+    link: "https://drive.google.com/drive/folders/1jHL2AKBimudH6UqY4spzuFuCoKCi8Qhr?usp=sharing"
+  },
+  { 
+    title: "Responsive Web Design", 
+    org: "FreeCodeCamp", 
+    period: "Aug – Oct 2023",
+    link: "https://drive.google.com/file/d/1pUOlQ0-o2_Fa7ozepgPtURVChNkSzPxW/view?usp=sharing"
+  },
 ];
 
 const EducationSection = () => {
@@ -87,23 +108,26 @@ const EducationSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Certificates</h3>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Certificates & Training</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certificates.map((cert, i) => (
-              <motion.div
+              <motion.a
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 key={cert.title}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-                className="glass rounded-2xl p-5 text-center hover:border-primary/30 transition-all"
+                className="block glass rounded-2xl p-5 text-center hover:border-primary/30 transition-all cursor-pointer"
               >
                 <Award size={24} className="text-primary mx-auto mb-3" />
                 <h4 className="font-semibold text-foreground text-sm mb-1">{cert.title}</h4>
                 <p className="text-xs text-muted-foreground">{cert.org}</p>
                 <p className="text-xs text-muted-foreground mt-1">{cert.period}</p>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.div>

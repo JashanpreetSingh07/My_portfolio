@@ -31,7 +31,7 @@ const HeroSection = () => {
         transition={{ duration: 8, repeat: Infinity }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-20">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -73,7 +73,7 @@ const HeroSection = () => {
               animate={{ boxShadow: ["0 0 20px hsl(0 80% 55% / 0.3)", "0 0 40px hsl(0 80% 55% / 0.5)", "0 0 20px hsl(0 80% 55% / 0.3)"] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              Full-Stack Developer
+              Aspiring AI/ML Engineer
             </motion.span>
           </div>
         </motion.div>

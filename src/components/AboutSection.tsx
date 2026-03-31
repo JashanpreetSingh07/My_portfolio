@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Brain, Trophy, BookOpen } from "lucide-react";
+import { Code2, Brain, Trophy, BookOpen, User } from "lucide-react";
 
 const highlights = [
   {
@@ -33,8 +33,54 @@ const scrollingItems = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-6 relative">
+    <section id="about" className="pt-8 pb-24 px-6 relative">
       <div className="max-w-6xl mx-auto">
+        {/* Who am I section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98, y: 30 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-32 relative rounded-[2rem] overflow-hidden group glass p-8 md:p-14 hover:border-primary/30 transition-all shadow-lg"
+        >
+          {/* Background glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none -mt-32 -mr-32 transition-transform duration-1000 group-hover:scale-110"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none -mb-32 -ml-32 transition-transform duration-1000 group-hover:scale-110"></div>
+
+          <div className="flex flex-col md:flex-row gap-12 items-center relative z-20">
+              <div className="md:w-1/3 flex justify-center">
+                <div className="relative w-40 h-40 md:w-56 md:h-56">
+                  <div className="absolute inset-0 rounded-full border border-primary/20 flex items-center justify-center bg-primary/5 backdrop-blur-md z-10 shadow-lg shadow-primary/5">
+                    <User className="w-20 h-20 md:w-28 md:h-28 text-primary group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <div className="absolute inset-0 rounded-full border-t border-r border-primary/60 animate-spin" style={{ animationDuration: '4s' }}></div>
+                  <div className="absolute inset-[-10px] rounded-full border-b border-l border-primary/30 animate-spin" style={{ animationDirection: 'reverse', animationDuration: '6s' }}></div>
+                </div>
+              </div>
+              
+              <div className="md:w-2/3 text-center md:text-left">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-6 backdrop-blur-md">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                  About Me
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground tracking-tight">
+                  Who <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/60 italic font-display">am I?</span>
+                </h2>
+                <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+                  <p>
+                    I am a passionate Computer Science student specializing in <strong className="text-foreground tracking-wide font-semibold text-primary/90">Machine Learning</strong>, focused on creating intelligent and impactful software solutions.
+                  </p>
+                  <p>
+                    I have hands-on experience in developing end-to-end projects, including <span className="text-foreground font-medium">AI-powered systems</span>, web applications, and data-driven tools. I enjoy transforming complex problems into simple, efficient solutions and constantly push myself to learn and adapt to new technologies.
+                  </p>
+                  <p className="font-medium text-foreground/80">
+                    My goal is to contribute to innovative teams and build products that make a real difference.
+                  </p>
+                </div>
+              </div>
+            </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
